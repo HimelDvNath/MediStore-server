@@ -1,10 +1,23 @@
 import app from "./app";
 import config from "./config";
+import { prisma } from "./lib/prisma";
 
-function server(){
-    const port = config.PORT;
-    app.listen(port, ()=>{
-        console.log(`server is running on ${port}`);
-    })
+
+const PORT = config.PORT; 
+
+async function server() {
+    try {
+        await prisma.$connect();
+        console.log("Connected to the database successfully.");
+
+        app.listen(PORT, () => {
+            console.log(`Server is running on http://localhost:${PORT}`);
+        });
+    } catch (error) {
+        console.error("An error occurred:", error);
+        await prisma.$disconnect();
+        process.exit(1);
+    }
 }
+
 server();
