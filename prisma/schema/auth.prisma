@@ -1,21 +1,28 @@
 model User {
-    id            String    @id
+    id            String      @id
     name          String
-    email         String
+    email         String      @unique
     password      String?
-    role          Role      @default(CUSTOMER)
+    role          Role        @default(CUSTOMER)
     phone         String
     address       String
-    isActive      Boolean   @default(true)
-    emailVerified Boolean   @default(false)
-    createdAt     DateTime  @default(now())
-    updatedAt     DateTime  @updatedAt
+    isActive      Boolean     @default(true)
+    emailVerified Boolean     @default(false)
+    createdAt     DateTime    @default(now())
+    updatedAt     DateTime    @updatedAt
+
     sessions      Session[]
     accounts      Account[]
+    cartItems     CartItem[]
+    orders        Order[]
+    orderItems    OrderItem[]
+    reviews       Review[]
 
-    @@unique([email])
+    medicines     Medicine[]  @relation("SellerMedicines")
+
     @@map("user")
 }
+
 
 enum Role {
     ADMIN

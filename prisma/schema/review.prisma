@@ -1,0 +1,16 @@
+model Review {
+  id         Int      @id @default(autoincrement())
+  rating     Int
+  comment    String?
+  createdAt  DateTime @default(now())
+
+  medicineId String
+  customerId String
+
+  medicine   Medicine @relation(fields: [medicineId], references: [id], onDelete: Cascade)
+  customer   User     @relation(fields: [customerId], references: [id])
+
+  @@index([medicineId])
+  @@index([customerId])
+  @@map("review")
+}
