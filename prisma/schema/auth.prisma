@@ -4,8 +4,8 @@ model User {
     email         String      @unique
     password      String?
     role          Role        @default(CUSTOMER)
-    phone         String
-    address       String
+    phone         String?
+    address       String?
     isActive      Boolean     @default(true)
     emailVerified Boolean     @default(false)
     createdAt     DateTime    @default(now())
@@ -15,7 +15,6 @@ model User {
     accounts      Account[]
     cartItems     CartItem[]
     orders        Order[]
-    orderItems    OrderItem[]
     reviews       Review[]
 
     medicines     Medicine[]  @relation("SellerMedicines")

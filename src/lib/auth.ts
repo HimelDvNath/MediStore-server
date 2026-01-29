@@ -8,4 +8,8 @@ export const auth = betterAuth({
         provider: "postgresql",
     }),
     trustedOrigins: [config.APP_URL!],
+    emailAndPassword: {
+        enabled: true,
+        autoSignIn: false
+    },
 });

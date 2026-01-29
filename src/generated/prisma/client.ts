@@ -65,20 +65,10 @@ export type Verification = Prisma.VerificationModel
  */
 export type CartItem = Prisma.CartItemModel
 /**
- * Model Category
- * 
- */
-export type Category = Prisma.CategoryModel
-/**
  * Model Medicine
  * 
  */
 export type Medicine = Prisma.MedicineModel
-/**
- * Model OrderItem
- * 
- */
-export type OrderItem = Prisma.OrderItemModel
 /**
  * Model Order
  * 
