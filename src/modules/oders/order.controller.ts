@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
-import { CreateOrderDTO } from "../../../types";
+import { CreateOrderDTO } from "../../types";
 import { orderServices } from "./order.service";
+
 
 const createOrder = async (req: Request, res: Response) => {
     try {

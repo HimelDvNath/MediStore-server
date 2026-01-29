@@ -1,5 +1,5 @@
-import { prisma } from "../../../lib/prisma";
-import { CreateOrderDTO } from "../../../types";
+import { prisma } from "../../lib/prisma";
+import { CreateOrderDTO } from "../../types";
 
 const createOrder = async (data: CreateOrderDTO) => {
     const {

@@ -4,7 +4,7 @@ import { auth } from "./lib/auth";
 import { toNodeHandler } from "better-auth/node";
 import config from "./config";
 import { authRoutes } from "./modules/auth/auth.route";
-import { orderRouter } from "./modules/oders/seller/oder.route";
+import { orderRouter } from "./modules/oders/oder.route";
 import { sellerRoutes } from "./modules/seller/seller.route";
 
 const app = express();
