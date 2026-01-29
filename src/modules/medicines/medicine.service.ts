@@ -22,8 +22,16 @@ const getAllMedicinesByCategory = async (payload:{
     }
   });
 };
+const getMedicineById = async (id: string) => {
+  return prisma.medicine.findFirstOrThrow({
+    where: {
+      id
+    },
+  });
+};
 
 export const medicineService = {
     getAllMedicines,
-    getAllMedicinesByCategory
+    getAllMedicinesByCategory,
+    getMedicineById
 }
