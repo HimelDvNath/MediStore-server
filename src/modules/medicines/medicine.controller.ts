@@ -38,8 +38,9 @@ const getMedicineById = async (req: Request, res: Response) => {
     return res.status(500).json({ message: error.message });
   }
 };
+
 export const medicineController = {
     getMedicines,
     getAllMedicinesByCategory,
-    getMedicineById
+    getMedicineById,
 }

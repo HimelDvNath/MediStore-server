@@ -7,6 +7,7 @@ import { authRoutes } from "./modules/auth/auth.route";
 import { orderRouter } from "./modules/oders/oder.route";
 import { sellerRoutes } from "./modules/seller/seller.route";
 import { medicineRouter } from "./modules/medicines/medicine.routes";
+import { categoryRouter } from "./modules/caregory/category.routes";
 
 const app = express();
 
@@ -24,4 +25,5 @@ app.use("/api/admin/users", authRoutes);
 app.use("/api/seller", sellerRoutes);
 app.use("/api/orders", orderRouter);
 app.use("/api/medicines", medicineRouter);
+app.use("/api/categories", categoryRouter);
 export default app;
