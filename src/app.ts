@@ -6,6 +6,7 @@ import config from "./config";
 import { authRoutes } from "./modules/auth/auth.route";
 import { orderRouter } from "./modules/oders/oder.route";
 import { sellerRoutes } from "./modules/seller/seller.route";
+import { medicineRouter } from "./modules/medicines/medicine.routes";
 
 const app = express();
 
@@ -22,4 +23,5 @@ app.all("/api/auth/*splat", toNodeHandler(auth));
 app.use("/api/admin/users", authRoutes);
 app.use("/api/seller", sellerRoutes);
 app.use("/api/orders", orderRouter);
+app.use("/api/medicines", medicineRouter);
 export default app;
