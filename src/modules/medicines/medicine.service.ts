@@ -1,6 +1,6 @@
 import { prisma } from "../../lib/prisma";
 
-export const getAllMedicines = async () => {
+const getAllMedicines = async () => {
   return prisma.medicine.findMany({
     where: {
       isActive: true
@@ -10,6 +10,20 @@ export const getAllMedicines = async () => {
     }
   });
 };
+const getAllMedicinesByCategory = async (payload:{
+    categoryName: string
+}) => {
+  return prisma.medicine.findMany({
+    where: {
+      categoryName: payload.categoryName
+    },
+    orderBy: {
+      createdAt: "desc"
+    }
+  });
+};
+
 export const medicineService = {
-    getAllMedicines
+    getAllMedicines,
+    getAllMedicinesByCategory
 }
